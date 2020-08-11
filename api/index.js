@@ -54,7 +54,7 @@ export default async function api (request, response) {
     return response.writeHead(400)
       .end('Invalid URL')
   }
-  const [, owner, repo, issueNumber, reactionType='+1'] = match
+  const [, owner, repo, issueNumber, reactionType = '+1'] = match
   try {
     const reactionCount = await getReactionCount(owner, repo, Number(issueNumber), reactionType)
 
